@@ -12,15 +12,15 @@
   {
     "A":
     {
-      "id": "minecraft:stick"
+      "item": "minecraft:stick"
     },
     "B":
     {
-      "id": "minecraft:iron_ingot"
+      "item": "minecraft:iron_ingot"
     },
     "C":
     {
-      "id": "minecraft:redstone"
+      "item": "minecraft:redstone"
     }
   },
 

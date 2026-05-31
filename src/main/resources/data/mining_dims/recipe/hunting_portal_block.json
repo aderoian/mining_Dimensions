@@ -3,30 +3,30 @@
 
   "pattern":
   [
-    " C ",
+    "ABA",
     "BCB",
-    " A "
+    "ABA"
   ],
 
   "key":
   {
     "A":
     {
-      "id": "minecraft:stick"
+      "item": "minecraft:black_concrete"
     },
     "B":
     {
-      "id": "minecraft:iron_ingot"
+      "item": "minecraft:iron_ingot"
     },
     "C":
     {
-      "id": "minecraft:quartz"
+      "item": "mining_dims:hunting_teleporter"
     }
   },
 
   "result":
   {
-    "id": "mining_dims:nethering_teleporter",
+    "id": "mining_dims:hunting_portal_block",
     "count": 1
   }
 }

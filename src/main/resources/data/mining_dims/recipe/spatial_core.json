@@ -12,27 +12,27 @@
   {
     "A":
     {
-      "id": "minecraft:diamond"
+      "item": "minecraft:diamond"
     },
     "B":
     {
-      "id": "minecraft:emerald"
+      "item": "minecraft:emerald"
     },
     "C":
     {
-      "id": "minecraft:amethyst_shard"
+      "item": "minecraft:amethyst_shard"
     },
     "D":
     {
-      "id": "minecraft:redstone"
+      "item": "minecraft:redstone"
     },
     "E":
     {
-      "id": "minecraft:lapis_lazuli"
+      "item": "minecraft:lapis_lazuli"
     },
     "F":
     {
-      "id": "minecraft:iron_ingot"
+      "item": "minecraft:iron_ingot"
     }
   },
 

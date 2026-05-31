@@ -12,23 +12,23 @@
   {
     "A":
     {
-      "id": "minecraft:ender_pearl"
+      "item": "minecraft:ender_pearl"
     },
     "B":
     {
-      "id": "minecraft:iron_ingot"
+      "item": "minecraft:iron_ingot"
     },
     "C":
     {
-      "id": "mining_dims:mining_teleporter"
+      "item": "mining_dims:mining_teleporter"
     },
     "D":
     {
-      "id": "mining_dims:caving_teleporter"
+      "item": "mining_dims:caving_teleporter"
     },
     "E":
     {
-      "id": "mining_dims:spatial_core"
+      "item": "mining_dims:spatial_core"
     }
   },
 

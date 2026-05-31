@@ -12,21 +12,21 @@
   {
     "A":
     {
-      "id": "minecraft:black_concrete"
+      "item": "minecraft:black_concrete"
     },
     "B":
     {
-      "id": "minecraft:iron_ingot"
+      "item": "minecraft:iron_ingot"
     },
     "C":
     {
-      "id": "mining_dims:nethering_teleporter"
+      "item": "mining_dims:sky_teleporter"
     }
   },
 
   "result":
   {
-    "id": "mining_dims:nethering_portal_block",
+    "id": "mining_dims:sky_portal_block",
     "count": 1
   }
 }
