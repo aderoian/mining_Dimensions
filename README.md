@@ -1,9 +1,29 @@
-# Fabric Example Mod
+# Mining Dimensions (NeoForge 1.21.1)
 
-## Setup
+Custom mining/hunting/caving/climbing/nethering dimensions with teleporters, extra ores, and hunting-dimension mob boosts.
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+## Requirements
+
+- Java 21
+- Gradle wrapper (`gradlew` / `gradlew.bat`)
+
+## Build
+
+```bash
+./gradlew build
+```
+
+## Run
+
+```bash
+./gradlew runClient
+./gradlew runServer
+```
+
+## Configuration
+
+Common config is generated at `config/mining_dims-common.toml` on first run.
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+MIT

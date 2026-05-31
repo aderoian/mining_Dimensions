@@ -2,35 +2,28 @@ package com.kwpugh.mining_dims.init;
 
 import com.kwpugh.mining_dims.MiningDims;
 import com.kwpugh.mining_dims.items.*;
-import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
+import net.minecraft.world.item.Item;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class ItemInit
-{
-    public static final Item MINING_TELEPORTER = new MiningTeleporter(new Item.Settings().maxCount(1));
-    public static final Item CAVING_TELEPORTER = new CavingTeleporter(new Item.Settings().maxCount(1));
-    public static final Item CLIMBING_TELEPORTER = new ClimbingTeleporter(new Item.Settings().maxCount(1));
-    public static final Item NETHERING_TELEPORTER = new NetheringTeleporter(new Item.Settings().maxCount(1));
-    public static final Item HUNTING_TELEPORTER = new HuntingTeleporter(new Item.Settings().maxCount(1));
+public class ItemInit {
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MiningDims.MOD_ID);
 
-    public static final Item FLINT_AND_DIAMOND = new Item(new Item.Settings().maxCount(1));
+    public static final DeferredItem<MiningTeleporter> MINING_TELEPORTER = ITEMS.register("mining_teleporter",
+            () -> new MiningTeleporter(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CavingTeleporter> CAVING_TELEPORTER = ITEMS.register("caving_teleporter",
+            () -> new CavingTeleporter(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<ClimbingTeleporter> CLIMBING_TELEPORTER = ITEMS.register("climbing_teleporter",
+            () -> new ClimbingTeleporter(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<NetheringTeleporter> NETHERING_TELEPORTER = ITEMS.register("nethering_teleporter",
+            () -> new NetheringTeleporter(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<HuntingTeleporter> HUNTING_TELEPORTER = ITEMS.register("hunting_teleporter",
+            () -> new HuntingTeleporter(new Item.Properties().stacksTo(1)));
 
-    public static final Item DIAMOND_NUGGET = new Item((new Item.Settings()).maxCount(64));
-    public static final Item NETHERITE_FRAGMENT = new Item((new Item.Settings()).maxCount(64));
-
-    public static void init()
-    {
-        Registry.register(Registries.ITEM, new Identifier(MiningDims.MOD_ID, "mining_teleporter"), MINING_TELEPORTER);
-        Registry.register(Registries.ITEM, new Identifier(MiningDims.MOD_ID, "caving_teleporter"), CAVING_TELEPORTER);
-        Registry.register(Registries.ITEM, new Identifier(MiningDims.MOD_ID, "climbing_teleporter"), CLIMBING_TELEPORTER);
-        Registry.register(Registries.ITEM, new Identifier(MiningDims.MOD_ID, "nethering_teleporter"), NETHERING_TELEPORTER);
-        Registry.register(Registries.ITEM, new Identifier(MiningDims.MOD_ID, "hunting_teleporter"), HUNTING_TELEPORTER);
-
-        Registry.register(Registries.ITEM, new Identifier(MiningDims.MOD_ID, "diamond_nugget"), DIAMOND_NUGGET);
-        Registry.register(Registries.ITEM, new Identifier(MiningDims.MOD_ID, "netherite_fragment"), NETHERITE_FRAGMENT);
-
-        Registry.register(Registries.ITEM, new Identifier(MiningDims.MOD_ID, "flint_and_diamond"), FLINT_AND_DIAMOND);
-    }
+    public static final DeferredItem<Item> FLINT_AND_DIAMOND = ITEMS.register("flint_and_diamond",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> DIAMOND_NUGGET = ITEMS.register("diamond_nugget",
+            () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> NETHERITE_FRAGMENT = ITEMS.register("netherite_fragment",
+            () -> new Item(new Item.Properties().stacksTo(64)));
 }

@@ -12,13 +12,13 @@
     {
         "A":
         {
-            "item": "mining_dims:diamond_nugget"
+            "id": "mining_dims:diamond_nugget"
         }
     },
     
     "result":
     {
-        "item": "minecraft:diamond",
+        "id": "minecraft:diamond",
         "count": 1
     }
 }

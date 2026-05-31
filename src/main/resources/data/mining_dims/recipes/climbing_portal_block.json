@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "mining_dims:climbing_teleporter"
+      "id": "mining_dims:climbing_teleporter"
     },
     {
-      "item": "minecraft:stone_bricks"
+      "id": "minecraft:stone_bricks"
     }
   ],
   "result": {
-    "item": "mining_dims:climbing_portal_block",
+    "id": "mining_dims:climbing_portal_block",
     "count": 1
   }
 }

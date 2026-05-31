@@ -3,57 +3,36 @@ package com.kwpugh.mining_dims.util;
 import com.kwpugh.mining_dims.MiningDims;
 import com.kwpugh.mining_dims.init.BlockInit;
 import com.kwpugh.mining_dims.init.ItemInit;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class MiningDimsGroup
-{
-    public static void addGroup()
-    {
-        // force class run when we want
-    }
+import java.util.function.Supplier;
 
-    private static final ItemGroup MINING_DIMS_GROUP = FabricItemGroup.builder(new Identifier(MiningDims.MOD_ID, "mining_dims_group"))
-            .icon(() -> new ItemStack(ItemInit.MINING_TELEPORTER))
-            .entries((enabledFeatures, entries, operatorEnabled) -> {
-                entries.add(BlockInit.MINING_PORTAL_BLOCK);
-                entries.add(BlockInit.CLIMBING_PORTAL_BLOCK);
-                entries.add(BlockInit.CAVING_PORTAL_BLOCK);
-                entries.add(BlockInit.HUNTING_PORTAL_BLOCK);
-                entries.add(BlockInit.NETHERING_PORTAL_BLOCK);
+public class MiningDimsGroup {
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MiningDims.MOD_ID);
 
-                entries.add(ItemInit.MINING_TELEPORTER);
-                entries.add(ItemInit.CLIMBING_TELEPORTER);
-                entries.add(ItemInit.CAVING_TELEPORTER);
-                entries.add(ItemInit.HUNTING_TELEPORTER);
-                entries.add(ItemInit.NETHERING_TELEPORTER);
-            })
-            .build();
-
-//    public static final ItemGroup MINING_DIMS_GROUP = new FabricItemGroup(new Identifier(MiningDims.MOD_ID, "mining_dims_group"))
-//    {
-//        @Override
-//        public ItemStack createIcon()
-//        {
-//            return new ItemStack(ItemInit.MINING_TELEPORTER);
-//        }
-//
-//        @Override
-//        protected void addItems(FeatureSet enabledFeatures, Entries entries, boolean haPermission)
-//        {
-//            entries.add(BlockInit.MINING_PORTAL_BLOCK);
-//            entries.add(BlockInit.CLIMBING_PORTAL_BLOCK);
-//            entries.add(BlockInit.CAVING_PORTAL_BLOCK);
-//            entries.add(BlockInit.HUNTING_PORTAL_BLOCK);
-//            entries.add(BlockInit.NETHERING_PORTAL_BLOCK);
-//
-//            entries.add(ItemInit.MINING_TELEPORTER);
-//            entries.add(ItemInit.CLIMBING_TELEPORTER);
-//            entries.add(ItemInit.CAVING_TELEPORTER);
-//            entries.add(ItemInit.HUNTING_TELEPORTER);
-//            entries.add(ItemInit.NETHERING_TELEPORTER);
-//        }
-//    };
+    public static final Supplier<CreativeModeTab> MINING_DIMS_TAB = CREATIVE_TABS.register("mining_dims_group",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.mining_dims.mining_dims_group"))
+                    .icon(() -> new ItemStack(ItemInit.MINING_TELEPORTER.get()))
+                    .displayItems((params, output) -> {
+                        output.accept(BlockInit.MINING_PORTAL_BLOCK.get());
+                        output.accept(BlockInit.CLIMBING_PORTAL_BLOCK.get());
+                        output.accept(BlockInit.CAVING_PORTAL_BLOCK.get());
+                        output.accept(BlockInit.HUNTING_PORTAL_BLOCK.get());
+                        output.accept(BlockInit.NETHERING_PORTAL_BLOCK.get());
+                        output.accept(ItemInit.MINING_TELEPORTER.get());
+                        output.accept(ItemInit.CLIMBING_TELEPORTER.get());
+                        output.accept(ItemInit.CAVING_TELEPORTER.get());
+                        output.accept(ItemInit.HUNTING_TELEPORTER.get());
+                        output.accept(ItemInit.NETHERING_TELEPORTER.get());
+                        output.accept(ItemInit.FLINT_AND_DIAMOND.get());
+                        output.accept(ItemInit.DIAMOND_NUGGET.get());
+                        output.accept(ItemInit.NETHERITE_FRAGMENT.get());
+                    })
+                    .build());
 }

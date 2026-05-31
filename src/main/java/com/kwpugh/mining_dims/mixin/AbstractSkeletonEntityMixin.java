@@ -1,45 +1,34 @@
 package com.kwpugh.mining_dims.mixin;
 
-import com.kwpugh.mining_dims.MiningDims;
+import com.kwpugh.mining_dims.config.MiningDimsConfig;
 import com.kwpugh.mining_dims.init.MiningDimsRegistry;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.ai.RangedAttackMob;
-import net.minecraft.entity.mob.AbstractSkeletonEntity;
-import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.world.LocalDifficulty;
-import net.minecraft.world.World;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.monster.AbstractSkeleton;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(AbstractSkeletonEntity.class)
-public abstract class AbstractSkeletonEntityMixin extends HostileEntity implements RangedAttackMob
-{
-    private AbstractSkeletonEntityMixin(EntityType<? extends AbstractSkeletonEntity> entityType, World world)
-    {
-        super(entityType, world);
+@Mixin(AbstractSkeleton.class)
+public abstract class AbstractSkeletonEntityMixin extends Monster {
+    private AbstractSkeletonEntityMixin(EntityType<? extends Monster> entityType, Level level) {
+        super(entityType, level);
     }
 
-    @Inject(method="initEquipment",at=@At("TAIL"),cancellable = true)
-    private void miningDimsInitEquipment(Random random, LocalDifficulty difficulty, CallbackInfo ci)
-    {
-        RegistryKey<World> registryKey = world.getRegistryKey();
-        if(registryKey == MiningDimsRegistry.MININGDIMS_WORLD_KEY2)
-        {
-            if(MiningDims.CONFIG.GENERAL.enableZombieGear)
-            {
-                this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
-                this.equipStack(EquipmentSlot.HEAD, new ItemStack(Items.IRON_HELMET));
-                this.equipStack(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
-                this.equipStack(EquipmentSlot.LEGS, new ItemStack(Items.IRON_LEGGINGS));
-                this.equipStack(EquipmentSlot.FEET, new ItemStack(Items.IRON_BOOTS));
-            }
+    @Inject(method = "populateDefaultEquipmentSlots", at = @At("TAIL"))
+    private void miningDimsInitEquipment(net.minecraft.util.RandomSource random, DifficultyInstance difficulty, CallbackInfo ci) {
+        if (level().dimension().equals(MiningDimsRegistry.MININGDIMS_WORLD_KEY2) && MiningDimsConfig.GENERAL.enableZombieGear.get()) {
+            setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
+            setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.IRON_HELMET));
+            setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
+            setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.IRON_LEGGINGS));
+            setItemSlot(EquipmentSlot.FEET, new ItemStack(Items.IRON_BOOTS));
         }
     }
 }

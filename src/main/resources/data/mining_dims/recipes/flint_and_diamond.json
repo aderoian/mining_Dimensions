@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:diamond"
+      "id": "minecraft:diamond"
     },
     {
-      "item": "minecraft:flint"
+      "id": "minecraft:flint"
     }
   ],
   "result": {
-    "item": "mining_dims:flint_and_diamond"
+    "id": "mining_dims:flint_and_diamond"
   }
 }

@@ -1,40 +1,24 @@
 {
   "type": "mining_dims:caving_dim",
   "generator": {
+    "type": "minecraft:noise",
+    "settings": "mining_dims:caving_dim_noise",
     "biome_source": {
+      "type": "minecraft:multi_noise",
       "biomes": [
         {
+          "biome": "minecraft:mushroom_fields",
           "parameters": {
-            "erosion": [
-              -1.0,
-              1.0
-            ],
+            "temperature": [-1.0, 1.0],
+            "humidity": [-1.0, 1.0],
+            "continentalness": [-1.2, -1.05],
+            "erosion": [-1.0, 1.0],
+            "weirdness": [-1.0, 1.0],
             "depth": 0.0,
-            "weirdness": [
-              -1.0,
-              1.0
-            ],
-            "offset": 0.0,
-            "temperature": [
-              -1.0,
-              1.0
-            ],
-            "humidity": [
-              -1.0,
-              1.0
-            ],
-            "continentalness": [
-              -1.2,
-              -1.05
-            ]
-          },
-          "biome": "minecraft:mushroom_fields"
+            "offset": 0.0
+          }
         }
-      ],
-      "type": "minecraft:multi_noise"
-    },
-    "seed": 0,
-    "settings": "mining_dims:caving_dim_noise",
-    "type": "minecraft:noise"
+      ]
+    }
   }
 }

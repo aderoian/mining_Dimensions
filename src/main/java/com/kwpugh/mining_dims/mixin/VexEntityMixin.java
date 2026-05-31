@@ -1,41 +1,30 @@
 package com.kwpugh.mining_dims.mixin;
 
-import com.kwpugh.mining_dims.MiningDims;
+import com.kwpugh.mining_dims.config.MiningDimsConfig;
 import com.kwpugh.mining_dims.init.MiningDimsRegistry;
-import net.minecraft.util.math.random.Random;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Vex;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.mob.VexEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.world.LocalDifficulty;
-import net.minecraft.world.World;
+@Mixin(Vex.class)
+public abstract class VexEntityMixin extends Monster {
+    public VexEntityMixin(EntityType<? extends Monster> entityType, Level level) {
+        super(entityType, level);
+    }
 
-@Mixin(VexEntity.class)
-public abstract class VexEntityMixin extends HostileEntity
-{
-	public VexEntityMixin(EntityType<? extends HostileEntity> entityType, World world)
-	{
-		super(entityType, world);
-	}
-
-	@Inject(method="initEquipment",at=@At("TAIL"),cancellable = true)
-	private void miningDimsInitEquipment(Random random, LocalDifficulty difficulty, CallbackInfo ci)
-	{
-		RegistryKey<World> registryKey = world.getRegistryKey();
-		if(registryKey == MiningDimsRegistry.MININGDIMS_WORLD_KEY2)
-        {
-        	if(MiningDims.CONFIG.GENERAL.enableVexGear)
-			{
-				this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.NETHERITE_SWORD));
-			}
-		}
-	}
+    @Inject(method = "populateDefaultEquipmentSlots", at = @At("TAIL"))
+    private void miningDimsInitEquipment(net.minecraft.util.RandomSource random, DifficultyInstance difficulty, CallbackInfo ci) {
+        if (level().dimension().equals(MiningDimsRegistry.MININGDIMS_WORLD_KEY2) && MiningDimsConfig.GENERAL.enableVexGear.get()) {
+            setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.NETHERITE_SWORD));
+        }
+    }
 }

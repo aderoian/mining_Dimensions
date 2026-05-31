@@ -2,40 +2,37 @@ package com.kwpugh.mining_dims.items;
 
 import com.kwpugh.mining_dims.init.MiningDimsRegistry;
 import com.kwpugh.mining_dims.util.TeleporterUtil;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.world.World;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class ClimbingTeleporter extends BaseTeleporter
-{
-    public ClimbingTeleporter(Item.Settings settings)
-    {
-        super(settings);
-    }
+public class ClimbingTeleporter extends BaseTeleporter {
+    private static final ResourceKey<Level> DIM_KEY = MiningDimsRegistry.MININGDIMS_WORLD_KEY5;
 
-    private RegistryKey<World> dimKey = MiningDimsRegistry.MININGDIMS_WORLD_KEY5;
-
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand)
-    {
-        ItemStack stack = player.getStackInHand(hand);
-        TeleporterUtil.movePlayer(dimKey, world, player, hand);
-
-        return TypedActionResult.success(stack);
+    public ClimbingTeleporter(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext)
-    {
-        tooltip.add(Text.translatable("item.mining_dims.teleporter.desc").formatted(Formatting.GREEN));
+    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
+        return TeleporterUtil.movePlayer(DIM_KEY, world, player, hand);
+    }
+
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(Component.translatable("item.mining_dims.teleporter.desc").withStyle(ChatFormatting.GREEN));
     }
 }

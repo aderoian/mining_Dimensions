@@ -1,23 +1,15 @@
 {
   "required": true,
-  "minVersion": "0.8",
   "package": "com.kwpugh.mining_dims.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
     "AbstractSkeletonEntityMixin",
-    "AnvilScreenHandlerMixin",
-    "EnchantmentTargetMixin",
-    "ForgingScreenHandlerAccessor",
     "GoatEntityMixin",
-    "LivingEntityMixinDrops",
-    "PiglinEntityMixin",
     "PiglinBruteEntityMixin",
-    "SpawnRestrictionMixin",
+    "PiglinEntityMixin",
     "VexEntityMixin",
     "WitherSkeletonEntityMixin",
     "ZombieEntityMixin"
-  ],
-  "client": [
   ],
   "injectors": {
     "defaultRequire": 1

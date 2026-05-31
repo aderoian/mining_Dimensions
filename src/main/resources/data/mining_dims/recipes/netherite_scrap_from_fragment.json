@@ -12,13 +12,13 @@
     {
         "A":
         {
-            "item": "mining_dims:netherite_fragment"
+            "id": "mining_dims:netherite_fragment"
         }
     },
     
     "result":
     {
-        "item": "minecraft:netherite_scrap",
+        "id": "minecraft:netherite_scrap",
         "count": 1
     }
 }

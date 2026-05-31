@@ -1,27 +1,20 @@
 package com.kwpugh.mining_dims.items;
 
-import com.kwpugh.pugh_lib.api.CustomRecipeRemainder;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
-public class BaseTeleporter extends Item implements CustomRecipeRemainder
-{
-    public BaseTeleporter(Item.Settings settings)
-    {
-        super(settings);
+public class BaseTeleporter extends Item {
+    public BaseTeleporter(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public boolean hasRecipeRemainder()
-    {
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
         return true;
     }
 
     @Override
-    public ItemStack getRecipeRemainder(ItemStack stackIn)
-    {
-        ItemStack stack = stackIn.copy();
-
-        return stack;
+    public ItemStack getCraftingRemainingItem(ItemStack stack) {
+        return stack.copy();
     }
 }

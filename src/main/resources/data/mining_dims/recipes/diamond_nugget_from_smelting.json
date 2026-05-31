@@ -1,35 +1,34 @@
 {
   "type": "minecraft:smelting",
-  "ingredient": [
+  "ingredient": { "type": "minecraft:or", "ingredients": [
     {
-      "item": "minecraft:diamond_pickaxe"
+      "id": "minecraft:diamond_pickaxe"
     },
     {
-      "item": "minecraft:diamond_shovel"
+      "id": "minecraft:diamond_shovel"
     },
     {
-      "item": "minecraft:diamond_axe"
+      "id": "minecraft:diamond_axe"
     },
     {
-      "item": "minecraft:diamond_hoe"
+      "id": "minecraft:diamond_hoe"
     },
     {
-      "item": "minecraft:diamond_sword"
+      "id": "minecraft:diamond_sword"
     },
     {
-      "item": "minecraft:diamond_helmet"
+      "id": "minecraft:diamond_helmet"
     },
     {
-      "item": "minecraft:diamond_chestplate"
+      "id": "minecraft:diamond_chestplate"
     },
     {
-      "item": "minecraft:diamond_leggings"
+      "id": "minecraft:diamond_leggings"
     },
     {
-      "item": "minecraft:diamond_boots"
+      "id": "minecraft:diamond_boots"
     }
-  ],
-  "result": "mining_dims:diamond_nugget",
+  ]}, "result": { "id": "mining_dims:diamond_nugget", "count": 1 },
   "experience": 0.3,
   "cookingtime": 200
 }

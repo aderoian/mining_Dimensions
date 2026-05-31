@@ -12,21 +12,21 @@
   {
     "A":
     {
-      "item": "minecraft:stick"
+      "id": "minecraft:stick"
     },
     "B":
     {
-      "item": "minecraft:iron_ingot"
+      "id": "minecraft:iron_ingot"
     },
     "C":
     {
-      "item": "minecraft:lapis_lazuli"
+      "id": "minecraft:lapis_lazuli"
     }
   },
 
   "result":
   {
-    "item": "mining_dims:mining_teleporter",
+    "id": "mining_dims:mining_teleporter",
     "count": 1
   }
 }

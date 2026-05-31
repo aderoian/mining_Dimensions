@@ -1,0 +1,9 @@
+{
+  "values": [
+    "mining_dims:mining_teleporter",
+    "mining_dims:caving_teleporter",
+    "mining_dims:climbing_teleporter",
+    "mining_dims:hunting_teleporter",
+    "mining_dims:nethering_teleporter"
+  ]
+}
