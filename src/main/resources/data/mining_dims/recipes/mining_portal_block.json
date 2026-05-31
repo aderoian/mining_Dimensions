@@ -1,14 +1,31 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+
+  "key":
+  {
+    "A":
+    {
+      "id": "minecraft:black_concrete"
+    },
+    "B":
+    {
+      "id": "minecraft:iron_ingot"
+    },
+    "C":
     {
       "id": "mining_dims:mining_teleporter"
-    },
-    {
-      "id": "minecraft:stone_bricks"
     }
-  ],
-  "result": {
+  },
+
+  "result":
+  {
     "id": "mining_dims:mining_portal_block",
     "count": 1
   }

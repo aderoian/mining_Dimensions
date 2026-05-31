@@ -1,5 +1,5 @@
 {
-  "feature": "mining_dims:ore_extra_ancient_debris",
+  "feature": "mining_dims:ore_extra_diamond",
   "placement": [
     {
       "type": "minecraft:count",
@@ -11,12 +11,12 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:trapezoid",
+        "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 128
+          "absolute": 20
         },
         "min_inclusive": {
-          "absolute": 0
+          "absolute": -60
         }
       }
     },

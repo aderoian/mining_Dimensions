@@ -25,12 +25,16 @@ public class MiningDimsGroup {
                         output.accept(BlockInit.CAVING_PORTAL_BLOCK.get());
                         output.accept(BlockInit.HUNTING_PORTAL_BLOCK.get());
                         output.accept(BlockInit.NETHERING_PORTAL_BLOCK.get());
+                        output.accept(BlockInit.SKY_PORTAL_BLOCK.get());
+                        output.accept(BlockInit.TELEPORT_PAD.get());
                         output.accept(ItemInit.MINING_TELEPORTER.get());
                         output.accept(ItemInit.CLIMBING_TELEPORTER.get());
                         output.accept(ItemInit.CAVING_TELEPORTER.get());
                         output.accept(ItemInit.HUNTING_TELEPORTER.get());
                         output.accept(ItemInit.NETHERING_TELEPORTER.get());
-                        output.accept(ItemInit.FLINT_AND_DIAMOND.get());
+                        output.accept(ItemInit.SKY_TELEPORTER.get());
+                        output.accept(ItemInit.SPATIAL_CORE.get());
+                        output.accept(ItemInit.SPATIAL_TOOL.get());
                         output.accept(ItemInit.DIAMOND_NUGGET.get());
                         output.accept(ItemInit.NETHERITE_FRAGMENT.get());
                     })

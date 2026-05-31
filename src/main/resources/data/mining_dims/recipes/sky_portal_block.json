@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+
+  "key":
+  {
+    "A":
+    {
+      "id": "minecraft:black_concrete"
+    },
+    "B":
+    {
+      "id": "minecraft:iron_ingot"
+    },
+    "C":
+    {
+      "id": "mining_dims:sky_teleporter"
+    }
+  },
+
+  "result":
+  {
+    "id": "mining_dims:sky_portal_block",
+    "count": 1
+  }
+}

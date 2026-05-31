@@ -1,0 +1,13 @@
+{
+  "type": "mining_dims:sky_dim",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "mining_dims:sky_dim",
+      "lakes": false,
+      "features": false,
+      "layers": [],
+      "structure_overrides": []
+    }
+  }
+}

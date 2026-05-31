@@ -1,6 +1,7 @@
 package com.kwpugh.mining_dims;
 
 import com.kwpugh.mining_dims.config.MiningDimsConfig;
+import com.kwpugh.mining_dims.init.BlockEntityInit;
 import com.kwpugh.mining_dims.init.BlockInit;
 import com.kwpugh.mining_dims.init.ItemInit;
 import com.kwpugh.mining_dims.util.MiningDimsGroup;
@@ -20,9 +21,11 @@ public class MiningDims {
     public static final ResourceLocation MOD_DIMENSION3_ID = id("caving_dim");
     public static final ResourceLocation MOD_DIMENSION4_ID = id("nethering_dim");
     public static final ResourceLocation MOD_DIMENSION5_ID = id("climbing_dim");
+    public static final ResourceLocation MOD_DIMENSION6_ID = id("sky_dim");
 
     public MiningDims(IEventBus modEventBus, ModContainer modContainer) {
         BlockInit.BLOCKS.register(modEventBus);
+        BlockEntityInit.BLOCK_ENTITIES.register(modEventBus);
         BlockInit.ITEMS.register(modEventBus);
         ItemInit.ITEMS.register(modEventBus);
         MiningDimsGroup.CREATIVE_TABS.register(modEventBus);

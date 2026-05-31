@@ -19,11 +19,15 @@ public class ItemInit {
             () -> new NetheringTeleporter(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<HuntingTeleporter> HUNTING_TELEPORTER = ITEMS.register("hunting_teleporter",
             () -> new HuntingTeleporter(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<SkyTeleporter> SKY_TELEPORTER = ITEMS.register("sky_teleporter",
+            () -> new SkyTeleporter(new Item.Properties().stacksTo(1)));
 
-    public static final DeferredItem<Item> FLINT_AND_DIAMOND = ITEMS.register("flint_and_diamond",
-            () -> new Item(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> DIAMOND_NUGGET = ITEMS.register("diamond_nugget",
             () -> new Item(new Item.Properties().stacksTo(64)));
     public static final DeferredItem<Item> NETHERITE_FRAGMENT = ITEMS.register("netherite_fragment",
             () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<SpatialCore> SPATIAL_CORE = ITEMS.register("spatial_core",
+            () -> new SpatialCore(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<SpatialCaptureItem> SPATIAL_TOOL = ITEMS.register("spatial_tool",
+            () -> new SpatialCaptureItem(new Item.Properties().stacksTo(1)));
 }

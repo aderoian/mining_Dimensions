@@ -23,7 +23,7 @@ public class NetheringTeleporter extends BaseTeleporter {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
-        return TeleporterUtil.movePlayer(DIM_KEY, world, player, hand);
+        return TeleporterUtil.movePlayerOnPortableUse(DIM_KEY, world, player, hand);
     }
 
     @Override

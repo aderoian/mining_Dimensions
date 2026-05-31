@@ -42,6 +42,11 @@ public class MiningDimsConfig {
         public final ModConfigSpec.BooleanValue enableVexGear;
         public final ModConfigSpec.DoubleValue gearDropChance;
 
+        public final ModConfigSpec.BooleanValue enableTeleportPad;
+        public final ModConfigSpec.BooleanValue enableMessageOnSneak;
+        public final ModConfigSpec.BooleanValue enableMessageOnTeleport;
+        public final ModConfigSpec.BooleanValue enableExtendedSearchRange;
+
         General(ModConfigSpec.Builder builder) {
             builder.comment("Extra Overworld Deepslate Ores (also affects Mining, Climbing, and Caving dims)");
             extraDiamondDeepslateVeinSize = builder.defineInRange("extraDiamondDeepslateVeinSize", 3, 1, 64);
@@ -78,6 +83,14 @@ public class MiningDimsConfig {
             enableWitherSkeletonGear = builder.define("enableWitherSkeletonGear", true);
             enableVexGear = builder.define("enableVexGear", true);
             gearDropChance = builder.defineInRange("gearDropChance", 0.10, 0.0, 1.0);
+
+            builder.comment("Teleport Pad and Portal Block settings");
+            enableTeleportPad = builder.define("enableTeleportPad", true);
+            enableMessageOnSneak = builder.define("enableMessageOnSneak", true);
+            enableMessageOnTeleport = builder.define("enableMessageOnTeleport", true);
+            enableExtendedSearchRange = builder.comment(
+                    "Extended portal block search range (25 chunks) vs standard (9 chunks)")
+                    .define("enableExtendedSearchRange", false);
         }
     }
 }

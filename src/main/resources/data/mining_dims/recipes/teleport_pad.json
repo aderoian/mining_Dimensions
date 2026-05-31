@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "BCB",
+        "CAC",
+        "BCB"
+    ],
+    
+    "key":
+    {
+        "A":
+        {
+            "id": "minecraft:ender_pearl"
+        },
+        "B":
+        {
+            "id": "minecraft:black_concrete"
+        },
+        "C":
+        {
+            "id": "minecraft:iron_ingot"
+        }
+    },
+    
+    "result":
+    {
+        "id": "mining_dims:teleport_pad",
+        "count": 2
+    }
+}

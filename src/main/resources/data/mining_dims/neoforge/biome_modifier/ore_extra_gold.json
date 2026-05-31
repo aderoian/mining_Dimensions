@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "mining_dims:ore_extra_diamond_deepslate",
+  "features": "mining_dims:ore_extra_gold_placed",
   "step": "underground_ores"
 }

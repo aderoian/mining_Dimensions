@@ -2,7 +2,7 @@
   "type": "mining_dims:nethering_dim",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "minecraft:nether",
+    "settings": "mining_dims:nethering_dim_noise",
     "biome_source": {
       "type": "minecraft:multi_noise",
       "biomes": [

@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    " A ",
+    "CED",
+    " B "
+  ],
+
+  "key":
+  {
+    "A":
+    {
+      "id": "minecraft:ender_pearl"
+    },
+    "B":
+    {
+      "id": "minecraft:iron_ingot"
+    },
+    "C":
+    {
+      "id": "mining_dims:mining_teleporter"
+    },
+    "D":
+    {
+      "id": "mining_dims:caving_teleporter"
+    },
+    "E":
+    {
+      "id": "mining_dims:spatial_core"
+    }
+  },
+
+  "result":
+  {
+    "id": "mining_dims:spatial_tool",
+    "count": 1
+  }
+}

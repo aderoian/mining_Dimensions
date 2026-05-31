@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "CAB",
+    "FEF",
+    "FDF"
+  ],
+
+  "key":
+  {
+    "A":
+    {
+      "id": "minecraft:diamond"
+    },
+    "B":
+    {
+      "id": "minecraft:emerald"
+    },
+    "C":
+    {
+      "id": "minecraft:amethyst_shard"
+    },
+    "D":
+    {
+      "id": "minecraft:redstone"
+    },
+    "E":
+    {
+      "id": "minecraft:lapis_lazuli"
+    },
+    "F":
+    {
+      "id": "minecraft:iron_ingot"
+    }
+  },
+
+  "result":
+  {
+    "id": "mining_dims:spatial_core",
+    "count": 1
+  }
+}
